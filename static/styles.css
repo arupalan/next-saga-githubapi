@@ -1,0 +1,339 @@
+/* Normalize */
+
+html {
+    box-sizing border-box
+}
+html * {
+    box-sizing inherit
+}
+body {
+    margin 0
+    font normal 16px sans-serif
+}
+
+/* Global */
+
+input {
+    padding 4px
+    height 26px
+    border-radius 2px
+    border 1px solid #ccc
+}
+label {
+    font-size .8rem
+}
+
+button {
+    display block
+    padding 13px
+    border none
+    border-radius 2px
+    background #479BE2
+    font-size 1rem
+    color #fafafa
+    line-height 0
+    margin 0
+}
+a {
+    color #479BE2
+    text-decoration none
+
+    &:hover {
+        text-decoration underline
+    }
+}
+h3 {
+    font-weight normal
+    margin .5rem 0
+}
+pre {
+    background #eee
+    padding 10px
+    border-radius 2px
+}
+code {
+    background #eee
+    padding 0 4px
+    border-radius 2px
+}
+pre code {
+    word-wrap break-word
+    padding 0
+}
+
+/* Application */
+
+.app {
+    padding 10px
+    margin 0 auto
+    max-width 768px
+}
+
+/* Top section */
+
+.top {
+    display flex
+
+    .search-form,
+    .repo-info {
+        flex 1
+    }
+    .stats {
+        margin 20px 0 0
+
+        span {
+            margin 0 10px
+
+            &:first-child {
+                margin 0 10px 0 0
+            }
+            &:last-child {
+                margin 0 0 0 10px
+            }
+        }
+        .fa::before {
+            margin 0 5px 0 0
+        }
+    }
+}
+
+.repo-name {
+    margin-bottom 0
+}
+
+/* Search form */
+
+.search-form {
+    max-width 135px
+    margin 0 20px 0 0
+}
+
+.search-form .field {
+    margin 10px 0
+    position relative
+
+    label,
+    input {
+        display block
+    }
+
+    .fa-spinner {
+        position absolute
+        bottom 5px
+        right 10px
+        transform rotate(0deg)
+        animation spin 1000ms linear infinite
+    }
+}
+
+@keyframes spin {
+    to {
+        transform rotate(360deg)
+    }
+}
+
+/* Dropdown */
+
+.dropdown {
+    font-size .7rem
+    position relative
+
+    .list {
+        margin 0
+        padding 0
+        list-style none
+        position absolute
+        top 5px
+        background #ffffff
+    }
+    .item {
+        padding 2px
+        border-bottom 1px solid #242424
+
+        &:focus {
+            background #479BE2
+            color #fafafa
+        }
+    }
+}
+
+/* Issues list */
+
+.issue {
+    font-size .8rem
+    display flex
+    display -webkit-flex
+    flex-direction column
+    -webkit-flex-direction column
+
+    .issue-info {
+        display flex
+        display -webkit-flex
+        justify-content space-between
+        -webkit-justify-content space-between
+        border-bottom 1px solid #242424
+        padding 10px 0 5px
+    }
+    .title {
+        align-self flex-start
+        -webkit-align-self flex-start
+        flex 1
+        -webkit-flex 1
+        margin 0 20px
+
+        &:hover {
+            cursor pointer
+        }
+    }
+    .time {
+        font-size .7rem
+    }
+
+    .issue-body {
+        padding 10px 0
+        line-height 1.2rem
+        border-bottom 1px dashed #242424
+        margin 0 0 20px
+
+        img {
+            width 100%
+        }
+    }
+}
+
+/* Pagination form */
+
+.pagination {
+    text-align center
+    margin 30px 0
+
+    .prev,
+    .next,
+    .field {
+        display inline-block
+        vertical-align middle
+    }
+    input[type="number"] {
+        width 50px
+        text-align center
+
+        &:disabled {
+            background #ccc
+        }
+    }
+    .field {
+        margin 0 20px
+
+        label {
+            margin 0 10px 0 0
+        }
+    }
+}
+
+/* Notification */
+
+.notification {
+    position fixed
+    top 0
+    right 0
+
+    .message {
+        background #fafafa
+        color #242424
+        border 1px solid #242424
+        padding 10px
+    }
+}
+
+@media only screen and (max-width: 440px) {
+
+    input {
+        height 30px
+    }
+
+    .top {
+        flex-direction column
+    }
+    .search-form {
+        margin 0
+        max-width none
+
+        input[type="text"] {
+            width 100%
+        }
+    }
+    .dropdown .item {
+        padding 6px 2px
+    }
+    .pagination {
+        text-align right
+
+        .field:first-child {
+            margin 0 20px 10px
+        }
+    }
+    .btn.prev {
+        margin 0 0 10px
+    }
+    .issue-info {
+        flex-direction column
+        -webkit-flex-direction column
+
+        .num,
+        .title,
+        .time {
+            flex 1
+            -webkit-flex 1
+        }
+        .num {
+            max-width 50px
+        }
+        .title {
+            margin 6px 0
+            padding 4px 0
+        }
+    }
+    .notification {
+        width 100%
+    }
+}
+
+
+.arrow {
+  cursor: pointer;
+  display: inline-block;  
+  height: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative;
+  line-height: 2.5em;
+  padding-left: 2em;
+  padding-right: 1em;
+  background: white;
+  color: black;
+   &:after {
+    // triangle hover color
+    border-right: 20px solid white;
+  }
+}
+
+.arrow:after {
+  // the triangle
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid transparent;
+  height: 0px;
+  width: 0px;
+  margin-right: 90px;
+  right: 0; 
+}
+
+.arrow:hover, .arrow:active {
+  background: yellow;
+  color: black;
+  &:after {
+    // triangle hover
+    border-right: 20px solid yellow;
+  }
+}

@@ -32,7 +32,13 @@ now
 
 Usually splitting your app state into `pages` feels natural, but sometimes you'll want to have global state for your app. This is an example using `redux` and `redux-saga` that works with universal rendering. This is just one way it can be done. If you have any suggestions or feedback please submit an issue or PR.
 
-![](http://i.imgur.com/JCxtWSj.gif)
+![](http://i.imgur.com/ldWyJPF.png)
+
+![](http://i.imgur.com/YfyXqoz.png)
+
+![](http://i.imgur.com/soWyl68.png)
+
+![](http://i.imgur.com/AxHvaRJ.png)
 
 Our page is located at `pages/index.js` so it will map the route `/`. To get the initial data for rendering we can implementing the static method `getInitialProps`. 
 We initialize the redux store and dispatch required actions until we are ready to return the initial state to be rendered. Since the component is wrapped with `next-redux-wrapper`, the component is automatically connected to Redux and wrapped with `react-redux Provider`, that allows us to access redux state immediately and send the store down to children components so they can access to the state when required.

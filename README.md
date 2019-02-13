@@ -1,6 +1,6 @@
 # next-redux-saga Github API (WIP) by Arup 
 
-## This fetures 
+## This features 
 ### Next.js 
     - SSR 
     - Automated code Splitting
@@ -21,6 +21,13 @@ yarn
 yarn build
 yarn next
 ```
+
+## How to test
+
+```bash
+yarn test
+```
+Tests written mainly to show the technique to test pages and reducers, but by no means the tests are exhaustive 
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
 

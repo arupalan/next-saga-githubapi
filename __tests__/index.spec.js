@@ -1,8 +1,10 @@
 import * as React from 'react'
 import {mount} from 'enzyme'
 import Index from '../pages/index'
+import renderer from 'react-test-renderer'
 import {InitialState}  from '../actions' 
 import configureStore from 'redux-mock-store'
+import {Provider} from 'react-redux'
 
 describe('Pages', () => {
   describe('Index', () => {
@@ -16,7 +18,7 @@ describe('Pages', () => {
     })
 
     it('should render without throwing an error', () => {
-      expect(wrapper.contains(<h1>Github Search API</h1>)).toBe(true)
+      expect(wrapper.contains(<h1>Github Issue Search Page</h1>)).toBe(true)
     });
   })  
 })

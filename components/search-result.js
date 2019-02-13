@@ -17,7 +17,7 @@ class SearchResult extends Component {
     return (
       <div>
         <ul className="list-group mb-4">
-          { issues.map(issue => issue === null ? '' : (
+          { issues ? issues.map(issue => issue === null ? '' : (
            <li key={issue.id} className="list-group-item d-flex justify-content-between align-items-center">
 						<Link href={{ 
 													pathname: '/details', 
@@ -27,7 +27,9 @@ class SearchResult extends Component {
 						</Link>
 						<span className="badge badge-success badge-pill">{issue.state}</span>
 					 </li>
-          ))}
+          ))
+          : <p>{'No issues selected'}</p>
+          }
         </ul>  
 				<div className="card border-primary mb-3">
 					<ul className="list-group">
